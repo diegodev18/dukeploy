@@ -20,7 +20,12 @@ export const createAllPaths = () => {
 
     if (!fs.existsSync(filePath)) {
       console.log(`Creating file: ${filePath}`);
-      fs.writeFileSync(filePath, "");
+
+      if (filePath.endsWith(".json")) {
+        fs.writeFileSync(filePath, JSON.stringify({}, null, 2));
+      } else {
+        fs.writeFileSync(filePath, "");
+      }
       filesCreated++;
     }
   });
