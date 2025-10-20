@@ -1,8 +1,8 @@
 import { createAllPaths } from "@/utils/createPaths";
 
-console.log("Welcome to Dukeploy!");
-
 console.log(`
+Welcome to Dukeploy!
+
 What is Dukeploy?
 Dukeploy is a deployment tool designed to simplify and automate the process of deploying applications.
 
