@@ -15,3 +15,9 @@ export const dukeployPaths = {
     GIT_TOKENS_FILE_PATH: getDukeployPath("git_tokens.json"),
   },
 } as const;
+
+export const REQUIRED_DEPENDENCIES = [
+  "git",
+  "docker",
+  "docker-compose",
+] as const;
