@@ -1,3 +1,4 @@
+import { checkRequiredDependencies } from "@/utils/checkRequiredDependencies";
 import { createAllPaths } from "@/utils/createPaths";
 
 console.log(`
@@ -16,3 +17,5 @@ Get started by configuring your applications and deploying them with Dukeploy!
 `);
 
 createAllPaths();
+
+checkRequiredDependencies();
