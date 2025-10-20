@@ -28,6 +28,11 @@ export const createAllPaths = () => {
       dirsCreated++;
     }
   });
-  console.log(`Created ${filesCreated.toString()} files.`);
-  console.log(`Created ${dirsCreated.toString()} directories.`);
+
+  if (filesCreated > 0) {
+    console.log(`Created ${filesCreated.toString()} files.`);
+  }
+  if (dirsCreated > 0) {
+    console.log(`Created ${dirsCreated.toString()} directories.`);
+  }
 };
