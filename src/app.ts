@@ -1,1 +1,3 @@
-console.log("Hello, Dukeploy!");
+import { createAllPaths } from "@/utils/createPaths";
+
+createAllPaths();
