@@ -1,3 +1,4 @@
+import { checkIfUserIsAdmin } from "@/utils/checkPrivileges";
 import { checkRequiredDependencies } from "@/utils/checkRequiredDependencies";
 import { createAllPaths } from "@/utils/createPaths";
 
@@ -15,6 +16,8 @@ Why use Dukeploy?
 
 Get started by configuring your applications and deploying them with Dukeploy!
 `);
+
+checkIfUserIsAdmin();
 
 createAllPaths();
 
