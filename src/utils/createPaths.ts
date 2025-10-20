@@ -3,6 +3,8 @@ import fs from "fs";
 import { dukeployPaths } from "@/config";
 
 export const createAllPaths = () => {
+  console.log("Creating all necessary paths...");
+
   const filesToCreate = Object.values(dukeployPaths.FILES);
   const dirsToCreate = Object.values(dukeployPaths.DIRECTORIES);
 
@@ -17,6 +19,7 @@ export const createAllPaths = () => {
     }
 
     if (!fs.existsSync(filePath)) {
+      console.log(`Creating file: ${filePath}`);
       fs.writeFileSync(filePath, "");
       filesCreated++;
     }
@@ -24,6 +27,7 @@ export const createAllPaths = () => {
 
   dirsToCreate.forEach((dirPath) => {
     if (!fs.existsSync(dirPath)) {
+      console.log(`Creating directory: ${dirPath}`);
       fs.mkdirSync(dirPath, { recursive: true });
       dirsCreated++;
     }
@@ -34,5 +38,10 @@ export const createAllPaths = () => {
   }
   if (dirsCreated > 0) {
     console.log(`Created ${dirsCreated.toString()} directories.`);
+  }
+  if (filesCreated === 0 && dirsCreated === 0) {
+    console.log(
+      "All necessary paths already exist. No changes made. If you want to reset, please delete the existing files and directories manually.",
+    );
   }
 };
