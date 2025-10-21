@@ -2,6 +2,8 @@ import { checkIfUserIsAdmin } from "@/utils/checkPrivileges";
 import { checkRequiredDependencies } from "@/utils/checkRequiredDependencies";
 import { createAllPaths } from "@/utils/createPaths";
 
+checkIfUserIsAdmin();
+
 const argv = process.argv.slice(2);
 
 if (argv.includes("--init") || argv.includes("-i")) {
@@ -19,8 +21,6 @@ if (argv.includes("--init") || argv.includes("-i")) {
   
   Get started by configuring your applications and deploying them with Dukeploy!
   `);
-
-  checkIfUserIsAdmin();
 
   createAllPaths();
 
